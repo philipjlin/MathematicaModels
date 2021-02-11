@@ -1,0 +1,1090 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     50247,       1080]
+NotebookOptionsPosition[     49991,       1067]
+NotebookOutlinePosition[     50333,       1082]
+CellTagsIndexPosition[     50290,       1079]
+WindowFrame->Normal
+ContainsDynamic->True *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`labels$$ = {
+    "\[Alpha]", "\[Epsilon]", "\[Chi]", "\[Phi]"}, $CellContext`loci$$ = {
+    "\[Alpha]", "\[Epsilon]", "\[Chi]", 
+     "\[Phi]"}, $CellContext`plotEllipse$$ = 
+    True, $CellContext`plotPoincare$$ = True, $CellContext`S1$$ = 
+    0.9074063650802547, $CellContext`S2$$ = 
+    0.23482341218244052`, $CellContext`S3$$ = -0.3485278377731612, \
+$CellContext`\[Alpha]$$ = 
+    0.12661495995638664`, $CellContext`\[Epsilon]$$ = -0.17800000000000005`, \
+$CellContext`\[Phi]$$ = -0.9779004066095437, $CellContext`\[Chi]$$ = 
+    0.21686278342384807`, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Alpha]$$], 0., "\[Alpha]"}, 
+      Dynamic[$CellContext`MyManipulator[$CellContext`\[Alpha]$$, {(-Pi)/2., 
+         Pi/2.}, ({$CellContext`\[Chi]$$, $CellContext`\[Phi]$$} = \
+$CellContext`AEToRP[{#, $CellContext`\[Epsilon]$$}]; {$CellContext`S1$$, \
+$CellContext`S2$$, $CellContext`S3$$} = $CellContext`AEToS[{$CellContext`\
+\[Alpha]$$ = #, $CellContext`\[Epsilon]$$}])& , Scale -> Pi]& ]}, {{
+       Hold[$CellContext`\[Epsilon]$$], 0.}, 
+      Dynamic[$CellContext`MyManipulator[$CellContext`\[Epsilon]$$, {(-Pi)/4.,
+          Pi/4.}, ({$CellContext`\[Chi]$$, $CellContext`\[Phi]$$} = \
+$CellContext`AEToRP[{$CellContext`\[Alpha]$$, #}]; {$CellContext`S1$$, \
+$CellContext`S2$$, $CellContext`S3$$} = $CellContext`AEToS[{$CellContext`\
+\[Alpha]$$, $CellContext`\[Epsilon]$$ = #}])& , Scale -> Pi]& ]}, {{
+       Hold[$CellContext`\[Chi]$$], 0.}, 
+      Dynamic[$CellContext`MyManipulator[$CellContext`\[Chi]$$, {
+        0., Pi/2.}, ({$CellContext`\[Alpha]$$, $CellContext`\[Epsilon]$$} = \
+$CellContext`RPToAE[{$CellContext`\[Chi]$$ = #, $CellContext`\[Phi]$$}]; \
+{$CellContext`S1$$, $CellContext`S2$$, $CellContext`S3$$} = \
+$CellContext`RPToS[{$CellContext`\[Chi]$$ = #, $CellContext`\[Phi]$$}])& , 
+        Scale -> Pi]& ]}, {{
+       Hold[$CellContext`\[Phi]$$], 0.}, 
+      Dynamic[$CellContext`MyManipulator[$CellContext`\[Phi]$$, {-Pi, 1. 
+         Pi}, ({$CellContext`\[Alpha]$$, $CellContext`\[Epsilon]$$} = \
+$CellContext`RPToAE[{$CellContext`\[Chi]$$, $CellContext`\[Phi]$$ = #}]; \
+{$CellContext`S1$$, $CellContext`S2$$, $CellContext`S3$$} = \
+$CellContext`RPToS[{$CellContext`\[Chi]$$, $CellContext`\[Phi]$$ = #}])& , 
+        Scale -> Pi]& ]}, {{
+       Hold[$CellContext`S1$$], 1., 
+       "\!\(\*SubscriptBox[\n StyleBox[\"S\",\nFontSlant->\"Italic\"], \"1\"]\
+\)"}, 
+      Dynamic[$CellContext`MyManipulator[$CellContext`S1$$, {-1., 
+        1.}, {($CellContext`s2 = $CellContext`S2$$; $CellContext`s3 = \
+$CellContext`S3$$)& , ({$CellContext`S2$$, $CellContext`S3$$} = \
+$CellContext`NS[{#, $CellContext`s2, $CellContext`s3}]; \
+{$CellContext`\[Alpha]$$, $CellContext`\[Epsilon]$$} = \
+$CellContext`SToAE[{$CellContext`S1$$ = #, $CellContext`S2$$, \
+$CellContext`S3$$}]; {$CellContext`\[Chi]$$, $CellContext`\[Phi]$$} = \
+$CellContext`SToRP[{$CellContext`S1$$ = #, $CellContext`S2$$, \
+$CellContext`S3$$}])& , Identity}]& ]}, {{
+       Hold[$CellContext`S2$$], 0., 
+       "\!\(\*SubscriptBox[\n StyleBox[\"S\",\nFontSlant->\"Italic\"], \"2\"]\
+\)"}, 
+      Dynamic[$CellContext`MyManipulator[$CellContext`S2$$, {-1., 
+        1.}, {($CellContext`s1 = $CellContext`S1$$; $CellContext`s3 = \
+$CellContext`S3$$)& , ({$CellContext`S1$$, $CellContext`S3$$} = \
+$CellContext`NS[{#, $CellContext`S1$$, $CellContext`S3$$}]; {$CellContext`\
+\[Alpha]$$, $CellContext`\[Epsilon]$$} = \
+$CellContext`SToAE[{$CellContext`S1$$, $CellContext`S2$$ = #, \
+$CellContext`S3$$}]; {$CellContext`\[Chi]$$, $CellContext`\[Phi]$$} = \
+$CellContext`SToRP[{$CellContext`S1$$, $CellContext`S2$$ = #, \
+$CellContext`S3$$}])& , Identity}]& ]}, {{
+       Hold[$CellContext`S3$$], 0., 
+       "\!\(\*SubscriptBox[\n StyleBox[\"S\",\nFontSlant->\"Italic\"], \"3\"]\
+\)"}, 
+      Dynamic[$CellContext`MyManipulator[$CellContext`S3$$, {-1., 
+        1.}, {($CellContext`s1 = $CellContext`S1$$; $CellContext`s2 = \
+$CellContext`S2$$)& , ({$CellContext`S1$$, $CellContext`S2$$} = \
+$CellContext`NS[{#, $CellContext`S1$$, $CellContext`S2$$}]; {$CellContext`\
+\[Alpha]$$, $CellContext`\[Epsilon]$$} = \
+$CellContext`SToAE[{$CellContext`S1$$, $CellContext`S2$$, $CellContext`S3$$ = \
+#}]; {$CellContext`\[Chi]$$, $CellContext`\[Phi]$$} = \
+$CellContext`SToRP[{$CellContext`S1$$, $CellContext`S2$$, $CellContext`S3$$ = \
+#}])& , Identity}]& ]}, {{
+       Hold[$CellContext`plotEllipse$$], True, "Polarization ellipse:"}, {
+      True, False}}, {{
+       Hold[$CellContext`plotPoincare$$], True, "Poincar\[EAcute] sphere:"}, {
+      True, False}}, {{
+       Hold[$CellContext`labels$$], {"\[Alpha]", "\[Epsilon]"}, "Angles:"}, 
+      CheckboxBar[#, 
+       MapThread[# -> 
+        Style[#, #2]& , {{"\[Alpha]", "\[Epsilon]", "\[Chi]", "\[Phi]"}, 
+         Take[{
+           RGBColor[0.6, 0.24, 0.4428931686004542], 
+           RGBColor[0.6, 0.5470136627990908, 0.24], 
+           RGBColor[0.24, 0.6, 0.33692049419863584`], 
+           RGBColor[0.24, 0.35317267440181815`, 0.6], 
+           RGBColor[0.6, 0.24, 0.5632658430022721], 
+           RGBColor[0.6, 0.4266409883972719, 0.24], 
+           RGBColor[0.2634521802031821, 0.6, 0.24], 
+           RGBColor[0.24, 0.47354534880363613`, 0.6], 
+           RGBColor[0.5163614825959097, 0.24, 0.6], 
+           RGBColor[0.6, 0.3062683139954558, 0.24], 
+           RGBColor[0.3838248546049982, 0.6, 0.24], 
+           RGBColor[0.24, 0.5939180232054561, 0.6], 
+           RGBColor[0.3959888081940937, 0.24, 0.6], 
+           RGBColor[0.6, 0.24, 0.2941043604063603]}, 
+          Length[{"\[Alpha]", "\[Epsilon]", "\[Chi]", "\[Phi]"}]]}]]& }, {{
+       Hold[$CellContext`loci$$], {"\[Alpha]", "\[Epsilon]"}, "Loci:"}, 
+      CheckboxBar[#, 
+       MapThread[# -> 
+        Style[#, #2]& , {{"\[Alpha]", "\[Epsilon]", "\[Chi]", "\[Phi]"}, 
+         Take[{
+           RGBColor[0.6, 0.24, 0.4428931686004542], 
+           RGBColor[0.6, 0.5470136627990908, 0.24], 
+           RGBColor[0.24, 0.6, 0.33692049419863584`], 
+           RGBColor[0.24, 0.35317267440181815`, 0.6], 
+           RGBColor[0.6, 0.24, 0.5632658430022721], 
+           RGBColor[0.6, 0.4266409883972719, 0.24], 
+           RGBColor[0.2634521802031821, 0.6, 0.24], 
+           RGBColor[0.24, 0.47354534880363613`, 0.6], 
+           RGBColor[0.5163614825959097, 0.24, 0.6], 
+           RGBColor[0.6, 0.3062683139954558, 0.24], 
+           RGBColor[0.3838248546049982, 0.6, 0.24], 
+           RGBColor[0.24, 0.5939180232054561, 0.6], 
+           RGBColor[0.3959888081940937, 0.24, 0.6], 
+           RGBColor[0.6, 0.24, 0.2941043604063603]}, 
+          Length[{"\[Alpha]", "\[Epsilon]", "\[Chi]", "\[Phi]"}]]}]]& }}, 
+    Typeset`size$$ = {576., {153., 158.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`plotEllipse$52909$$ = 
+    False, $CellContext`plotPoincare$52910$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`labels$$ = {
+         "\[Alpha]", "\[Epsilon]"}, $CellContext`loci$$ = {
+         "\[Alpha]", "\[Epsilon]"}, $CellContext`plotEllipse$$ = 
+        True, $CellContext`plotPoincare$$ = True, $CellContext`S1$$ = 
+        1., $CellContext`S2$$ = 0., $CellContext`S3$$ = 
+        0., $CellContext`\[Alpha]$$ = 0., $CellContext`\[Epsilon]$$ = 
+        0., $CellContext`\[Phi]$$ = 0., $CellContext`\[Chi]$$ = 0.}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`plotEllipse$$, $CellContext`plotEllipse$52909$$, 
+         False], 
+        Hold[$CellContext`plotPoincare$$, $CellContext`plotPoincare$52910$$, 
+         False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Row[{{$CellContext`e1, $CellContext`e2, $CellContext`e3, \
+$CellContext`e4} = {
+            $CellContext`\[Alpha]\[Epsilon]F[$CellContext`\[Alpha]$$, \
+$CellContext`\[Epsilon]$$, 0], 
+            $CellContext`\[Alpha]\[Epsilon]F[$CellContext`\[Alpha]$$, \
+$CellContext`\[Epsilon]$$, Pi/2], 
+            $CellContext`\[Alpha]\[Epsilon]F[$CellContext`\[Alpha]$$, \
+$CellContext`\[Epsilon]$$, Pi], 
+            $CellContext`\[Alpha]\[Epsilon]F[$CellContext`\[Alpha]$$, \
+$CellContext`\[Epsilon]$$, 3 (Pi/2)]}; {$CellContext`co, $CellContext`si} = {
+            Cos[$CellContext`\[Chi]$$], 
+            Sin[$CellContext`\[Chi]$$]}; Graphics[
+           If[$CellContext`plotEllipse$$, {
+             Arrowheads[{-0.035, 0.035}], 
+             If[
+              MemberQ[$CellContext`labels$$, "\[Alpha]"], {
+               Part[$CellContext`color, 2], 
+               $CellContext`Arc[{0, 0}, {0.6, 0.6}, {
+                0, $CellContext`\[Alpha]$$}, Label -> "\[Alpha]"]}, {}], 
+             If[
+              MemberQ[$CellContext`labels$$, "\[Epsilon]"], {
+               Part[$CellContext`color, 3], 
+               $CellContext`Arc[{0, 0}, {0.6, 
+                0.6}, {$CellContext`\[Alpha]$$, $CellContext`\[Alpha]$$ + \
+$CellContext`\[Epsilon]$$}, Label -> "\[Epsilon]"], 
+               Arrow[{$CellContext`e3 + $CellContext`e2, $CellContext`e2}], 
+               Text[
+               "\!\(\*\nStyleBox[\"a\",\nFontSlant->\"Italic\"]\)", \
+$CellContext`e3/2 + $CellContext`e2 + 0.08 Normalize[$CellContext`e2]], 
+               Arrow[{$CellContext`e3 + $CellContext`e2, $CellContext`e3}], 
+               Text[
+               "\!\(\*\nStyleBox[\"b\",\nFontSlant->\"Italic\"]\)", 
+                0.08 Normalize[$CellContext`e3] + $CellContext`e3 + \
+$CellContext`e2/2], $CellContext`dash, 
+               
+               Line[{$CellContext`e1 + $CellContext`e2, $CellContext`e1 + \
+$CellContext`e4, $CellContext`e3 + $CellContext`e4, $CellContext`e3 + \
+$CellContext`e2, $CellContext`e1 + $CellContext`e2, {0, 0}}], 
+               Line[{$CellContext`e1 + $CellContext`e2, {0, 0}}]}, {}], 
+             If[
+              MemberQ[$CellContext`labels$$, 
+               Alternatives["\[Epsilon]", "\[Alpha]"]], {
+               Part[$CellContext`color, 1], $CellContext`dash, 
+               Line[{$CellContext`e1, $CellContext`e3}], 
+               Line[{$CellContext`e2, $CellContext`e4}]}, {}], 
+             If[
+              MemberQ[$CellContext`labels$$, "\[Chi]"], {
+               Part[$CellContext`color, 4], 
+               $CellContext`Arc[{0, 0}, {0.4, 0.4}, {
+                0, $CellContext`\[Chi]$$}, Label -> "\[Chi]"], 
+               Arrow[{{0, -Sin[$CellContext`\[Chi]$$]}, {
+                  Cos[$CellContext`\[Chi]$$], -Sin[$CellContext`\[Chi]$$]}}], 
+               
+               Text[
+               "\!\(\*SubsuperscriptBox[\"\[ScriptCapitalE]\", \n \
+StyleBox[\"x\",\nFontSlant->\"Italic\"], \"0\"]\)", {$CellContext`co/
+                 2, -$CellContext`si - 0.1}], 
+               
+               Arrow[{{$CellContext`co, 
+                  0}, {$CellContext`co, -$CellContext`si}}], 
+               Text[
+               "\!\(\*SubsuperscriptBox[\(\[ScriptCapitalE]\), \(y\), \
+\(0\)]\)", {$CellContext`co + 0.1, (-$CellContext`si)/2}], $CellContext`dash, 
+               
+               
+               Line[{{$CellContext`co, $CellContext`si}, {-$CellContext`co, \
+$CellContext`si}, {-$CellContext`co, -$CellContext`si}, {$CellContext`co, \
+-$CellContext`si}, {$CellContext`co, $CellContext`si}, {0, 0}}]}, {}], {
+              Arrowheads[
+               
+               Table[{0.035, $CellContext`i}, {$CellContext`i, 0.025, 1 - 
+                 0.025, 0.05}]], 
+              ReplaceAll[
+               Part[
+                
+                ParametricPlot[{{
+                  Cos[$CellContext`t] $CellContext`co, 
+                   Cos[$CellContext`t - $CellContext`\[Phi]$$] \
+$CellContext`si}}, {$CellContext`t, 0, 2 Pi}], 1], Line -> Arrow]}}, {}], 
+           Frame -> True, FrameLabel -> {
+             Style[
+             "\!\(\*SubscriptBox[\"\[ScriptCapitalE]\", \n StyleBox[\"x\",\n\
+FontSlant->\"Italic\"]]\)", 12], 
+             Style["\!\(\*SubscriptBox[\(\[ScriptCapitalE]\), \(y\)]\)", 12]},
+            PlotRange -> {{-1, 1}, {-1, 1}}, Axes -> True, ImageSize -> 4 72],
+          
+         Graphics3D[{$CellContext`ax, 
+           If[$CellContext`plotPoincare$$, {
+             If[
+              MemberQ[$CellContext`labels$$, "\[Alpha]"], {
+               Graphics`Axes3D`ColorAll[
+                Part[$CellContext`color, 2]], 
+               
+               Graphics`Axes3D`Circle3D[{0, 0, 0}, 0.5, {
+                0, 2 $CellContext`\[Alpha]$$}, Label -> "2\[Alpha]", 
+                Graphics`Axes3D`ArrowHeads -> 2]}, {}], 
+             If[
+              MemberQ[$CellContext`labels$$, "\[Epsilon]"], {
+               Graphics`Axes3D`ColorAll[
+                Part[$CellContext`color, 3]], 
+               Graphics`Axes3D`RotateZ[2 $CellContext`\[Alpha]$$][
+                Graphics`Axes3D`RotateX[Pi/2][
+                 
+                 Graphics`Axes3D`Circle3D[{0, 0, 0}, 0.5, {
+                  0, 2 $CellContext`\[Epsilon]$$}, Label -> "2\[Epsilon]", 
+                  Graphics`Axes3D`ArrowHeads -> 2]]]}, {}], 
+             If[
+              MemberQ[$CellContext`labels$$, 
+               Alternatives["\[Epsilon]", "\[Alpha]"]], {
+               Part[$CellContext`color, 1], 
+               
+               Line[{{$CellContext`S1$$, $CellContext`S2$$, \
+$CellContext`S3$$}, {$CellContext`S1$$, $CellContext`S2$$, 0}}], 
+               Graphics`Axes3D`RotateZ[2 $CellContext`\[Alpha]$$][
+                Line[{{0, 0, 0}, {1, 0, 0}}]]}, {}], 
+             If[
+              MemberQ[$CellContext`labels$$, "\[Chi]"], {
+               Graphics`Axes3D`ColorAll[
+                Part[$CellContext`color, 4]], 
+               Graphics`Axes3D`RotateX[$CellContext`\[Phi]$$][
+                Graphics`Axes3D`Circle3D[{0, 0, 0}, 0.5, {
+                 0, 2 $CellContext`\[Chi]$$}, Label -> "2\[Chi]", 
+                 Graphics`Axes3D`ArrowHeads -> 2]]}, {}], 
+             If[
+              MemberQ[$CellContext`labels$$, "\[Phi]"], {
+               Graphics`Axes3D`ColorAll[
+                Part[$CellContext`color, 5]], 
+               Line[{{0, 0, 0}, 
+                 Normalize[{0, $CellContext`S2$$, $CellContext`S3$$}]}], 
+               
+               Line[{{$CellContext`S1$$, $CellContext`S2$$, \
+$CellContext`S3$$}, {0, $CellContext`S2$$, $CellContext`S3$$}}], 
+               Graphics`Axes3D`RotateZ[Pi/2][
+                Graphics`Axes3D`RotateX[Pi/2][
+                 
+                 Graphics`Axes3D`Circle3D[{0, 0, 0}, 0.5, {
+                  0, $CellContext`\[Phi]$$}, Label -> "\[Phi]", 
+                  Graphics`Axes3D`ArrowHeads -> 2]]]}, {}], 
+             If[
+              MemberQ[$CellContext`loci$$, "\[Alpha]"], {
+               Part[$CellContext`color, 2], 
+               Graphics`Axes3D`RotateZ[2 $CellContext`\[Alpha]$$][
+                Graphics`Axes3D`RotateX[Pi/2][
+                 Graphics`Axes3D`Circle3D[1]]]}, {}], 
+             If[
+              MemberQ[$CellContext`loci$$, "\[Epsilon]"], {
+               Part[$CellContext`color, 3], 
+               Graphics`Axes3D`TranslateZ[
+                Sin[2 $CellContext`\[Epsilon]$$]][
+                Graphics`Axes3D`Circle3D[
+                 Cos[2 $CellContext`\[Epsilon]$$]]]}, {}], 
+             If[
+              MemberQ[$CellContext`loci$$, "\[Chi]"], {
+               Part[$CellContext`color, 4], 
+               Graphics`Axes3D`TranslateX[
+                Cos[2 $CellContext`\[Chi]$$]][
+                Graphics`Axes3D`RotateY[Pi/2][
+                 Graphics`Axes3D`Circle3D[
+                  Sin[2 $CellContext`\[Chi]$$]]]]}, {}], 
+             If[
+              MemberQ[$CellContext`loci$$, "\[Phi]"], {
+               Part[$CellContext`color, 5], 
+               Graphics`Axes3D`RotateX[$CellContext`\[Phi]$$][
+                Graphics`Axes3D`Circle3D[{0, 0, 0}, 1, {0, Pi}]]}, {}], 
+             Graphics`Axes3D`RotateZ[2 $CellContext`\[Alpha]$$][
+              
+              Graphics`Axes3D`RotateY[(-2) \
+$CellContext`\[Epsilon]$$][$CellContext`arr3d]], {
+              Opacity[0.06], 
+              Specularity[White, 5], Blue, 
+              Sphere[]}}, {}]}, Boxed -> False, ViewPoint -> 10 {1, 1.2, 0.9},
+           ViewVertical -> {0, 0, 1}, PlotRange -> 1.3, 
+          PlotRegion -> $CellContext`Crop[{{0.21, 0.78}, {0.25, 0.81}}], 
+          ImageSize -> 4 72, Lighting -> {{"Point", White, {1, 2, 5}}}]}], 
+      "Specifications" :> {{{$CellContext`\[Alpha]$$, 0., "\[Alpha]"}, 
+         Dynamic[$CellContext`MyManipulator[$CellContext`\[Alpha]$$, {(-Pi)/
+            2., Pi/2.}, ({$CellContext`\[Chi]$$, $CellContext`\[Phi]$$} = \
+$CellContext`AEToRP[{#, $CellContext`\[Epsilon]$$}]; {$CellContext`S1$$, \
+$CellContext`S2$$, $CellContext`S3$$} = $CellContext`AEToS[{$CellContext`\
+\[Alpha]$$ = #, $CellContext`\[Epsilon]$$}])& , Scale -> 
+           Pi]& ]}, {{$CellContext`\[Epsilon]$$, 0.}, 
+         Dynamic[$CellContext`MyManipulator[$CellContext`\[Epsilon]$$, {(-Pi)/
+            4., Pi/4.}, ({$CellContext`\[Chi]$$, $CellContext`\[Phi]$$} = \
+$CellContext`AEToRP[{$CellContext`\[Alpha]$$, #}]; {$CellContext`S1$$, \
+$CellContext`S2$$, $CellContext`S3$$} = $CellContext`AEToS[{$CellContext`\
+\[Alpha]$$, $CellContext`\[Epsilon]$$ = #}])& , Scale -> 
+           Pi]& ]}, {{$CellContext`\[Chi]$$, 0.}, 
+         Dynamic[$CellContext`MyManipulator[$CellContext`\[Chi]$$, {
+           0., Pi/2.}, ({$CellContext`\[Alpha]$$, $CellContext`\[Epsilon]$$} = \
+$CellContext`RPToAE[{$CellContext`\[Chi]$$ = #, $CellContext`\[Phi]$$}]; \
+{$CellContext`S1$$, $CellContext`S2$$, $CellContext`S3$$} = \
+$CellContext`RPToS[{$CellContext`\[Chi]$$ = #, $CellContext`\[Phi]$$}])& , 
+           Scale -> Pi]& ]}, {{$CellContext`\[Phi]$$, 0.}, 
+         Dynamic[$CellContext`MyManipulator[$CellContext`\[Phi]$$, {-Pi, 1. 
+            Pi}, ({$CellContext`\[Alpha]$$, $CellContext`\[Epsilon]$$} = \
+$CellContext`RPToAE[{$CellContext`\[Chi]$$, $CellContext`\[Phi]$$ = #}]; \
+{$CellContext`S1$$, $CellContext`S2$$, $CellContext`S3$$} = \
+$CellContext`RPToS[{$CellContext`\[Chi]$$, $CellContext`\[Phi]$$ = #}])& , 
+           Scale -> Pi]& ]}, {{$CellContext`S1$$, 1., 
+          "\!\(\*SubscriptBox[\n StyleBox[\"S\",\nFontSlant->\"Italic\"], \"1\
+\"]\)"}, 
+         Dynamic[$CellContext`MyManipulator[$CellContext`S1$$, {-1., 
+           1.}, {($CellContext`s2 = $CellContext`S2$$; $CellContext`s3 = \
+$CellContext`S3$$)& , ({$CellContext`S2$$, $CellContext`S3$$} = \
+$CellContext`NS[{#, $CellContext`s2, $CellContext`s3}]; \
+{$CellContext`\[Alpha]$$, $CellContext`\[Epsilon]$$} = \
+$CellContext`SToAE[{$CellContext`S1$$ = #, $CellContext`S2$$, \
+$CellContext`S3$$}]; {$CellContext`\[Chi]$$, $CellContext`\[Phi]$$} = \
+$CellContext`SToRP[{$CellContext`S1$$ = #, $CellContext`S2$$, \
+$CellContext`S3$$}])& , Identity}]& ]}, {{$CellContext`S2$$, 0., 
+          "\!\(\*SubscriptBox[\n StyleBox[\"S\",\nFontSlant->\"Italic\"], \"2\
+\"]\)"}, 
+         Dynamic[$CellContext`MyManipulator[$CellContext`S2$$, {-1., 
+           1.}, {($CellContext`s1 = $CellContext`S1$$; $CellContext`s3 = \
+$CellContext`S3$$)& , ({$CellContext`S1$$, $CellContext`S3$$} = \
+$CellContext`NS[{#, $CellContext`S1$$, $CellContext`S3$$}]; {$CellContext`\
+\[Alpha]$$, $CellContext`\[Epsilon]$$} = \
+$CellContext`SToAE[{$CellContext`S1$$, $CellContext`S2$$ = #, \
+$CellContext`S3$$}]; {$CellContext`\[Chi]$$, $CellContext`\[Phi]$$} = \
+$CellContext`SToRP[{$CellContext`S1$$, $CellContext`S2$$ = #, \
+$CellContext`S3$$}])& , Identity}]& ]}, {{$CellContext`S3$$, 0., 
+          "\!\(\*SubscriptBox[\n StyleBox[\"S\",\nFontSlant->\"Italic\"], \"3\
+\"]\)"}, 
+         Dynamic[$CellContext`MyManipulator[$CellContext`S3$$, {-1., 
+           1.}, {($CellContext`s1 = $CellContext`S1$$; $CellContext`s2 = \
+$CellContext`S2$$)& , ({$CellContext`S1$$, $CellContext`S2$$} = \
+$CellContext`NS[{#, $CellContext`S1$$, $CellContext`S2$$}]; {$CellContext`\
+\[Alpha]$$, $CellContext`\[Epsilon]$$} = \
+$CellContext`SToAE[{$CellContext`S1$$, $CellContext`S2$$, $CellContext`S3$$ = \
+#}]; {$CellContext`\[Chi]$$, $CellContext`\[Phi]$$} = \
+$CellContext`SToRP[{$CellContext`S1$$, $CellContext`S2$$, $CellContext`S3$$ = \
+#}])& , Identity}]& ]}, {{$CellContext`plotEllipse$$, True, 
+          "Polarization ellipse:"}, {
+         True, False}}, {{$CellContext`plotPoincare$$, True, 
+          "Poincar\[EAcute] sphere:"}, {
+         True, False}}, {{$CellContext`labels$$, {"\[Alpha]", "\[Epsilon]"}, 
+          "Angles:"}, CheckboxBar[#, 
+          
+          MapThread[# -> 
+           Style[#, #2]& , {{"\[Alpha]", "\[Epsilon]", "\[Chi]", "\[Phi]"}, 
+            Take[{
+              RGBColor[0.6, 0.24, 0.4428931686004542], 
+              RGBColor[0.6, 0.5470136627990908, 0.24], 
+              RGBColor[0.24, 0.6, 0.33692049419863584`], 
+              RGBColor[0.24, 0.35317267440181815`, 0.6], 
+              RGBColor[0.6, 0.24, 0.5632658430022721], 
+              RGBColor[0.6, 0.4266409883972719, 0.24], 
+              RGBColor[0.2634521802031821, 0.6, 0.24], 
+              RGBColor[0.24, 0.47354534880363613`, 0.6], 
+              RGBColor[0.5163614825959097, 0.24, 0.6], 
+              RGBColor[0.6, 0.3062683139954558, 0.24], 
+              RGBColor[0.3838248546049982, 0.6, 0.24], 
+              RGBColor[0.24, 0.5939180232054561, 0.6], 
+              RGBColor[0.3959888081940937, 0.24, 0.6], 
+              RGBColor[0.6, 0.24, 0.2941043604063603]}, 
+             
+             Length[{"\[Alpha]", "\[Epsilon]", "\[Chi]", 
+               "\[Phi]"}]]}]]& }, {{$CellContext`loci$$, {
+          "\[Alpha]", "\[Epsilon]"}, "Loci:"}, CheckboxBar[#, 
+          
+          MapThread[# -> 
+           Style[#, #2]& , {{"\[Alpha]", "\[Epsilon]", "\[Chi]", "\[Phi]"}, 
+            Take[{
+              RGBColor[0.6, 0.24, 0.4428931686004542], 
+              RGBColor[0.6, 0.5470136627990908, 0.24], 
+              RGBColor[0.24, 0.6, 0.33692049419863584`], 
+              RGBColor[0.24, 0.35317267440181815`, 0.6], 
+              RGBColor[0.6, 0.24, 0.5632658430022721], 
+              RGBColor[0.6, 0.4266409883972719, 0.24], 
+              RGBColor[0.2634521802031821, 0.6, 0.24], 
+              RGBColor[0.24, 0.47354534880363613`, 0.6], 
+              RGBColor[0.5163614825959097, 0.24, 0.6], 
+              RGBColor[0.6, 0.3062683139954558, 0.24], 
+              RGBColor[0.3838248546049982, 0.6, 0.24], 
+              RGBColor[0.24, 0.5939180232054561, 0.6], 
+              RGBColor[0.3959888081940937, 0.24, 0.6], 
+              RGBColor[0.6, 0.24, 0.2941043604063603]}, 
+             Length[{"\[Alpha]", "\[Epsilon]", "\[Chi]", "\[Phi]"}]]}]]& }}, 
+      "Options" :> {ControlPlacement -> Top}, "DefaultOptions" :> {}],
+     ImageSizeCache->{622., {334., 339.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`e1 = {1., 0.}, $CellContext`e2 = {0., 
+        0.}, $CellContext`e3 = {-1., 0.}, $CellContext`e4 = {0., 
+        0.}, $CellContext`\[Alpha]\[Epsilon]F[
+         Pattern[$CellContext`\[Alpha], 
+          Blank[]], 
+         Pattern[$CellContext`\[Epsilon], 
+          Blank[]], 
+         Pattern[$CellContext`t, 
+          Blank[]]] = {(Cos[$CellContext`t] Cos[$CellContext`\[Alpha]]) 
+          Cos[$CellContext`\[Epsilon]] - (Sin[$CellContext`t] 
+          Sin[$CellContext`\[Alpha]]) 
+         Sin[$CellContext`\[Epsilon]], (Cos[$CellContext`t] 
+           Cos[$CellContext`\[Epsilon]]) 
+          Sin[$CellContext`\[Alpha]] + (Cos[$CellContext`\[Alpha]] 
+           Sin[$CellContext`t]) 
+          Sin[$CellContext`\[Epsilon]]}, $CellContext`co = 
+       1., $CellContext`si = 0., $CellContext`color = {
+         RGBColor[0.24720000000000017`, 0.24, 0.6], 
+         RGBColor[0.6, 0.24, 0.4428931686004542], 
+         RGBColor[0.6, 0.5470136627990908, 0.24], 
+         RGBColor[0.24, 0.6, 0.33692049419863584`], 
+         RGBColor[0.24, 0.35317267440181815`, 0.6], 
+         RGBColor[0.6, 0.24, 0.5632658430022721], 
+         RGBColor[0.6, 0.4266409883972719, 0.24], 
+         RGBColor[0.2634521802031821, 0.6, 0.24], 
+         RGBColor[0.24, 0.47354534880363613`, 0.6], 
+         RGBColor[0.5163614825959097, 0.24, 0.6], 
+         RGBColor[0.6, 0.3062683139954558, 0.24], 
+         RGBColor[0.3838248546049982, 0.6, 0.24], 
+         RGBColor[0.24, 0.5939180232054561, 0.6], 
+         RGBColor[0.3959888081940937, 0.24, 0.6], 
+         RGBColor[0.6, 0.24, 0.2941043604063603]}, $CellContext`Arc[{
+          Pattern[$CellContext`x, 
+           Blank[]], 
+          Pattern[$CellContext`y, 
+           Blank[]]}, {
+          Pattern[$CellContext`r1, 
+           Blank[]], 
+          Pattern[$CellContext`r2, 
+           Blank[]]}, {
+          Pattern[$CellContext`\[Theta]1, 
+           Blank[]], 
+          Pattern[$CellContext`\[Theta]2, 
+           Blank[]]}, 
+         OptionsPattern[]] := 
+       Module[{$CellContext`pos = OptionValue[Graphics`Axes3D`LabelPosition]},
+          
+         If[$CellContext`\[Theta]1 == $CellContext`\[Theta]2, {}, {
+           Apply[Arrow, 
+            Part[
+             Cases[
+              Flatten[
+               Part[
+                
+                ParametricPlot[{$CellContext`x + $CellContext`r1 
+                   Cos[$CellContext`\[Theta]], $CellContext`y + \
+$CellContext`r2 
+                   Sin[$CellContext`\[Theta]]}, {$CellContext`\[Theta], \
+$CellContext`\[Theta]1, $CellContext`\[Theta]2}], 1]], 
+              Line[
+               Blank[]]], 1]], 
+           If[OptionValue[Label] =!= None, 
+            Rotate[
+             Text[
+              OptionValue[Label], {
+              Mean[{$CellContext`r1, $CellContext`r2}] 
+               Part[$CellContext`pos, 2], 0}], 
+             Part[$CellContext`pos, 
+                1] ($CellContext`\[Theta]2 - $CellContext`\[Theta]1) + 
+             Mean[{$CellContext`\[Theta]1, $CellContext`\[Theta]2}], {0, 
+             0}], {}]}]], 
+       Options[$CellContext`Arc] = {
+        Label -> None, Graphics`Axes3D`LabelPosition -> {0, 1.1}, 
+         LabelStyle -> {}}, 
+       TagSet[Graphics`Axes3D`LabelPosition, 
+        MessageName[Graphics`Axes3D`LabelPosition, "usage"], 
+        ""], $CellContext`dash = Dashing[{0.02, 0.02}], $CellContext`ax = {
+         GrayLevel[0], 
+         Specularity[0], 
+         EdgeForm[
+          GrayLevel[0]], 
+         Glow[
+          GrayLevel[0]], {
+          Translate[
+           Rotate[{
+             Translate[{
+               Translate[{
+                 Line[{{0, 0, -1.25}, {0, 0, 1.25}}]}, {0, 0, -0.05}], 
+               Rotate[
+                Translate[
+                 
+                 Polygon[{{-0.03, 0, -0.010000000000000002`}, {0, 0, 0.1}, {
+                   0.03, 0, -0.010000000000000002`}, {0, 0, 
+                   0}, {-0.03, 0, -0.010000000000000002`}}], {0, 0, 1.2}], 
+                0, {0, 0, 1}], {}, 
+               Rotate[
+                Style[
+                 Text[
+                 "\!\(\*SubscriptBox[\n StyleBox[\"S\",\n\
+FontSlant->\"Italic\"], \"1\"]\)", {0.13, 0, 1.1700000000000002`}], {12}], Pi/
+                4, {0, 0, 1}]}, {0, 0, 1.3}]}, {{0, 0, 1}, {
+             1., 0, 0}}], {-1.3, 0, 0}], 
+          Translate[
+           Rotate[{
+             Translate[{
+               Translate[{
+                 Line[{{0, 0, -1.25}, {0, 0, 1.25}}]}, {0, 0, -0.05}], 
+               Rotate[
+                Translate[
+                 
+                 Polygon[{{-0.03, 0, -0.010000000000000002`}, {0, 0, 0.1}, {
+                   0.03, 0, -0.010000000000000002`}, {0, 0, 
+                   0}, {-0.03, 0, -0.010000000000000002`}}], {0, 0, 1.2}], Pi/
+                2, {0, 0, 1}], {}, 
+               Rotate[
+                Style[
+                 Text[
+                 "\!\(\*SubscriptBox[\n StyleBox[\"S\",\n\
+FontSlant->\"Italic\"], \"2\"]\)", {0.1, 0, 1.1700000000000002`}], {12}], Pi/
+                4, {0, 0, 1}]}, {0, 0, 1.3}]}, {{0, 0, 1}, {0, 1., 0}}], {
+           0, -1.3, 0}], 
+          Translate[
+           Rotate[{
+             Translate[{
+               Translate[{
+                 Line[{{0, 0, -1.25}, {0, 0, 1.25}}]}, {0, 0, -0.05}], 
+               Rotate[
+                Translate[
+                 
+                 Polygon[{{-0.03, 0, -0.010000000000000002`}, {0, 0, 0.1}, {
+                   0.03, 0, -0.010000000000000002`}, {0, 0, 
+                   0}, {-0.03, 0, -0.010000000000000002`}}], {0, 0, 1.2}], 
+                0, {0, 0, 1}], {}, 
+               Rotate[
+                Style[
+                 Text[
+                 "\!\(\*SubscriptBox[\n StyleBox[\"S\",\n\
+FontSlant->\"Italic\"], \"3\"]\)", {0.13, 0, 1.1700000000000002`}], {12}], (3 
+                 Pi)/4, {0, 0, 1}]}, {0, 0, 1.3}]}, {{0, 0, 1}, {
+             0, 0, 1.}}], {0, 0, -1.3}]}}, Graphics`Axes3D`ColorAll[
+         Pattern[$CellContext`col, 
+          Blank[]]] := Sequence[Black, 
+         Specularity[0], 
+         EdgeForm[$CellContext`col], 
+         Glow[$CellContext`col]], 
+       TagSet[Graphics`Axes3D`ColorAll, 
+        MessageName[Graphics`Axes3D`ColorAll, "usage"], ""], 
+       Graphics`Axes3D`Circle3D[
+         Pattern[Private`r, 
+          Blank[]], 
+         Pattern[Private`opts, 
+          BlankNullSequence[Rule]]] := 
+       Graphics`Axes3D`Circle3D[{0, 0, 0}, Private`r, {0, 2 Pi}, 
+         Private`opts], Graphics`Axes3D`Circle3D[
+         Pattern[Private`p, {
+           Pattern[Private`x, 
+            Blank[]], 
+           Pattern[Private`y, 
+            Blank[]], 
+           Pattern[Private`z, 
+            Blank[]]}], 
+         Pattern[Private`r, 
+          Blank[]], 
+         Pattern[Private`opts, 
+          BlankNullSequence[Rule]]] := 
+       Graphics`Axes3D`Circle3D[
+        Private`p, Private`r, {0, 2 Pi}, Private`opts], 
+       Graphics`Axes3D`Circle3D[
+         Pattern[Private`p, {
+           Pattern[Private`x, 
+            Blank[]], 
+           Pattern[Private`y, 
+            Blank[]], 
+           Pattern[Private`z, 
+            Blank[]]}], 
+         Pattern[Private`r, 
+          Blank[]], {
+          Pattern[Private`t1, 
+           Blank[]], 
+          Pattern[Private`t2, 
+           Blank[]]}, 
+         Pattern[Private`opts, 
+          OptionsPattern[]]] := 
+       Module[{Private`lp = OptionValue[Graphics`Axes3D`LabelPosition], 
+          Private`w, Private`hw, Private`hl, Private`t1a, Private`t2a, 
+          Private`rs = OptionValue[Graphics`Axes3D`RenderStyle], 
+          Private`ppopts, Private`ah = 
+          OptionValue[Graphics`Axes3D`ArrowHeads], Private`head, 
+          Private`end}, {Private`w, Private`hw, Private`hl} = ReplaceAll[
+            ReplaceAll[If[OptionValue[Scale] === Automatic, Private`r, 
+               OptionValue[Scale]] {
+              Graphics`Axes3D`Width, Graphics`Axes3D`HeadWidth, 
+               Graphics`Axes3D`HeadLength}, {Private`opts}], 
+            Options[Graphics`Axes3D`Circle3D]]; If[
+           Or[Private`t1 == Private`t2, Private`r == 0], {}, 
+           If[Abs[Private`t1 - Private`t2] >= Private`hl/Private`r, 
+             Private`t1a = 
+              Min[Private`t1, Private`t2] + 
+               If[Private`ah >= 2, Private`hl/Private`r, 0]; 
+             Private`t2a = 
+              Max[Private`t1, Private`t2] - If[
+               Private`ah >= 1, Private`hl/Private`r, 0]; Null, 
+             Private`ah = 0; {Private`t1a, Private`t2a} = 
+              Sort[{Private`t1, Private`t2}]]; Private`ppopts = FilterRules[
+              Join[{Private`opts}, 
+               Options[Graphics`Axes3D`Circle3D]], 
+              Options[ParametricPlot3D]]; 
+           Private`head = 
+            Switch[Private`rs, Full, Graphics`Axes3D`FatHead, Flat, 
+              Graphics`Axes3D`FlatHead][Private`hw, Private`hl]; 
+           Private`end = Switch[Private`rs, Full, 
+              Graphics`Axes3D`Disk3D[{0, 0, 0}, Private`w], Flat, {}]; 
+           Translate[{
+              Switch[Private`rs, Full, 
+               Part[
+                
+                ParametricPlot3D[{(Private`r + Private`w Cos[Private`v]) 
+                  Cos[Private`u], (Private`r + Private`w Cos[Private`v]) 
+                  Sin[Private`u], Private`w Sin[Private`v]}, {
+                 Private`u, Private`t1a, Private`t2a}, {Private`v, 0, 2 Pi}, 
+                 Mesh -> False, 
+                 Evaluate[
+                  Apply[Sequence, Private`ppopts]]], 1], Flat, 
+               Part[
+                ParametricPlot3D[Private`r {
+                   Cos[Private`t], 
+                   Sin[Private`t], 0}, {Private`t, Private`t1a, Private`t2a}, 
+                 
+                 Evaluate[Private`ppopts]], 1, 1, -1, -1]], 
+              Graphics`Axes3D`RotateZ[Private`t1a][
+               Graphics`Axes3D`TranslateX[Private`r][
+                Graphics`Axes3D`RotateX[Pi/2][
+                 If[Private`ah >= 2, Private`head, Private`end]]]], 
+              Graphics`Axes3D`RotateZ[Private`t2a][
+               Graphics`Axes3D`TranslateX[Private`r][
+                Graphics`Axes3D`RotateX[Pi/2][
+                 If[Private`ah >= 1, 
+                  Graphics`Axes3D`RotateX[Pi][Private`head], Private`end]]]], 
+              
+              If[OptionValue[Label] =!= None, 
+               
+               Graphics`Axes3D`RotateZ[(Private`t1 + Private`t2)/
+                 2 + (Part[Private`lp, 1] (Private`t2 - Private`t1))/2][
+                Text[
+                 OptionValue[Label], {
+                 Private`r Part[Private`lp, 2], 0, Private`r 
+                  Part[Private`lp, 3]}]], {}]}, Private`p]]], 
+       Options[Graphics`Axes3D`Circle3D] := {
+        Label -> None, Graphics`Axes3D`LabelPosition -> {0, 1.2, 0}, 
+         LabelStyle -> {}, Graphics`Axes3D`RenderStyle -> Flat, 
+         Graphics`Axes3D`Width -> 0.015, Graphics`Axes3D`ArrowHeads -> 0, 
+         Graphics`Axes3D`HeadWidth -> 0.03, Graphics`Axes3D`Width -> 0.01, 
+         Graphics`Axes3D`HeadLength -> 0.1, Scale -> Automatic, PlotPoints -> 
+         Automatic}, 
+       TagSet[Graphics`Axes3D`Circle3D, 
+        MessageName[Graphics`Axes3D`Circle3D, "usage"], ""], 
+       TagSet[Graphics`Axes3D`RenderStyle, 
+        MessageName[Graphics`Axes3D`RenderStyle, "usage"], ""], 
+       TagSet[Graphics`Axes3D`ArrowHeads, 
+        MessageName[Graphics`Axes3D`ArrowHeads, "usage"], ""], 
+       TagSet[Graphics`Axes3D`Width, 
+        MessageName[Graphics`Axes3D`Width, "usage"], ""], 
+       TagSet[Graphics`Axes3D`HeadWidth, 
+        MessageName[Graphics`Axes3D`HeadWidth, "usage"], ""], 
+       TagSet[Graphics`Axes3D`HeadLength, 
+        MessageName[Graphics`Axes3D`HeadLength, "usage"], ""], 
+       Graphics`Axes3D`FatHead[
+         Pattern[Private`width, 
+          Blank[]], 
+         Pattern[Private`length, 
+          Blank[]], 
+         Pattern[Private`opts, 
+          BlankNullSequence[Rule]]] := 
+       Graphics`Axes3D`TranslateZ[(-0.1) Private`length][{
+          Graphics`Axes3D`Cone[
+          Private`width, 0.1 Private`length, Graphics`Axes3D`Opening -> Down, 
+           Private`opts], 
+          Graphics`Axes3D`Cone[
+          Private`width, 1.1 Private`length, Graphics`Axes3D`Opening -> Down, 
+           Private`opts]}], Graphics`Axes3D`FatHead[
+         Pattern[Private`length, 
+          Blank[]], 
+         Pattern[Private`width, 
+          Blank[]], 
+         Pattern[Private`inset, 
+          Blank[]], 
+         Pattern[Private`opts, 
+          BlankNullSequence[Rule]]] := 
+       Graphics`Axes3D`TranslateZ[-Private`inset - Private`length][{
+          Graphics`Axes3D`Cone[
+          Private`width, Private`inset, Graphics`Axes3D`Opening -> Down, 
+           Private`opts], 
+          Graphics`Axes3D`Cone[
+          Private`width, Private`inset + Private`length, 
+           Graphics`Axes3D`Opening -> Down, Private`opts]}], 
+       TagSet[Graphics`Axes3D`FatHead, 
+        MessageName[Graphics`Axes3D`FatHead, "usage"], ""], 
+       Graphics`Axes3D`TranslateZ[
+         Pattern[Private`x, 
+          Blank[]]][
+         Pattern[Private`g, 
+          Blank[]]] := Translate[Private`g, {0, 0, Private`x}], 
+       TagSet[Graphics`Axes3D`TranslateZ, 
+        MessageName[Graphics`Axes3D`TranslateZ, "usage"], ""], 
+       Graphics`Axes3D`Cone[
+         Pattern[Private`r, 
+          Blank[]], 
+         Pattern[Private`h, 
+          Blank[]], 
+         Pattern[Private`opts, 
+          OptionsPattern[]]] := Module[{Private`rp3dopts = FilterRules[
+            Join[{Private`opts}, 
+             Options[Graphics`Axes3D`Cone]], 
+            Options[RevolutionPlot3D]], Private`pp}, 
+         If[OptionValue[Graphics`Axes3D`RenderStyle] === Full, 
+          If[OptionValue[Graphics`Axes3D`Opening] === Down, 
+           Part[
+            RevolutionPlot3D[
+            Private`h (1 - Private`t/Private`r), {Private`t, 0, Private`r}, 
+             Mesh -> False, 
+             Evaluate[
+              Apply[Sequence, Private`rp3dopts]]], 1], 
+           Part[
+            RevolutionPlot3D[
+            Private`h (Private`t/Private`r), {Private`t, 0, Private`r}, Mesh -> 
+             False, 
+             Evaluate[
+              Apply[Sequence, Private`rp3dopts]]], 1]], 
+          Private`pp = ReplaceAll[
+             OptionValue[PlotPoints], Automatic -> 10]; 
+          If[OptionValue[Graphics`Axes3D`Opening] === Down, {
+             Graphics`Axes3D`Circle3D[{0, 0, 0}, Private`r], 
+             Table[
+              
+              Line[{{0, 0, Private`h}, {
+                Private`r Sin[Private`t], Private`r Cos[Private`t], 0}}], {
+              Private`t, 0, 2 Pi - (2 Pi)/Private`pp, (2 Pi)/Private`pp}]}, {
+             Graphics`Axes3D`Circle3D[{0, 0, Private`h}, Private`r], 
+             Table[
+              
+              Line[{{0, 0, 0}, {
+                Private`r Sin[Private`t], Private`r Cos[Private`t], 
+                 Private`h}}], {
+              Private`t, 0, 2 Pi - (2 Pi)/Private`pp, (2 Pi)/Private`pp}]}]]],
+        Options[Graphics`Axes3D`Cone] = {
+        Graphics`Axes3D`Opening -> Down, PlotPoints -> Automatic, 
+         Graphics`Axes3D`RenderStyle -> Full}, 
+       TagSet[Graphics`Axes3D`Cone, 
+        MessageName[Graphics`Axes3D`Cone, "usage"], ""], 
+       TagSet[Graphics`Axes3D`Opening, 
+        MessageName[Graphics`Axes3D`Opening, "usage"], ""], 
+       Graphics`Axes3D`FlatHead[
+         Pattern[Private`width, 
+          Blank[]], 
+         Pattern[Private`length, 
+          Blank[]], 
+         Pattern[Private`opts, 
+          BlankNullSequence[Rule]]] := 
+       Polygon[{{-Private`width, 0, (-0.1) Private`length}, {
+          0, 0, Private`length}, {Private`width, 0, (-0.1) Private`length}, {
+          0, 0, 0}, {-Private`width, 0, (-0.1) Private`length}}], 
+       Graphics`Axes3D`FlatHead[
+         Pattern[Private`length, 
+          Blank[]], 
+         Pattern[Private`width, 
+          Blank[]], 
+         Pattern[Private`inset, 
+          Blank[]], 
+         Pattern[Private`opts, 
+          BlankNullSequence[Rule]]] := 
+       Graphics`Axes3D`TranslateZ[-Private`length][
+         Polygon[{{-Private`width, 0, -Private`inset}, {
+           0, 0, Private`length}, {Private`width, 0, -Private`inset}, {0, 0, 
+           0}, {-Private`width, 0, -Private`inset}}]], 
+       TagSet[Graphics`Axes3D`FlatHead, 
+        MessageName[Graphics`Axes3D`FlatHead, "usage"], ""], 
+       Graphics`Axes3D`Disk3D[{
+          Pattern[Private`x, 
+           Blank[]], 
+          Pattern[Private`y, 
+           Blank[]], 
+          Pattern[Private`z, 
+           Blank[]]}, 
+         Pattern[Private`r, 
+          Blank[]]] := Translate[
+         Part[
+          RevolutionPlot3D[0, {Private`t, 0, Private`r}, Mesh -> False], 1], {
+         Private`x, Private`y, Private`z}], 
+       TagSet[Graphics`Axes3D`Disk3D, 
+        MessageName[Graphics`Axes3D`Disk3D, "usage"], ""], 
+       Graphics`Axes3D`RotateZ[
+         Pattern[Private`theta, 
+          Blank[]]][
+         Pattern[Private`g, 
+          Blank[]]] := Rotate[Private`g, Private`theta, {0, 0, 1}], 
+       TagSet[Graphics`Axes3D`RotateZ, 
+        MessageName[Graphics`Axes3D`RotateZ, "usage"], ""], 
+       Graphics`Axes3D`TranslateX[
+         Pattern[Private`x, 
+          Blank[]]][
+         Pattern[Private`g, 
+          Blank[]]] := Translate[Private`g, {Private`x, 0, 0}], 
+       TagSet[Graphics`Axes3D`TranslateX, 
+        MessageName[Graphics`Axes3D`TranslateX, "usage"], ""], 
+       Graphics`Axes3D`RotateX[
+         Pattern[Private`theta, 
+          Blank[]]][
+         Pattern[Private`g, 
+          Blank[]]] := Rotate[Private`g, Private`theta, {1, 0, 0}], 
+       TagSet[Graphics`Axes3D`RotateX, 
+        MessageName[Graphics`Axes3D`RotateX, "usage"], ""], 
+       Graphics`Axes3D`RotateY[
+         Pattern[Private`theta, 
+          Blank[]]][
+         Pattern[Private`g, 
+          Blank[]]] := Rotate[Private`g, Private`theta, {0, 1, 0}], 
+       TagSet[Graphics`Axes3D`RotateY, 
+        MessageName[Graphics`Axes3D`RotateY, "usage"], 
+        ""], $CellContext`arr3d = {
+         GrayLevel[0], 
+         Specularity[0], 
+         EdgeForm[
+          RGBColor[0.24720000000000017`, 0.24, 0.6]], 
+         Glow[
+          RGBColor[0.24720000000000017`, 0.24, 0.6]], 
+         Thickness[0.007], 
+         Rotate[{
+           Translate[{
+             Translate[{
+               Line[{{0, 0, -0.425}, {0, 0, 0.425}}]}, {
+              0, 0, -0.07500000000000001}], 
+             Rotate[
+              Translate[
+               
+               Polygon[{{-0.045, 0, -0.015000000000000003`}, {
+                 0, 0, 0.15000000000000002`}, {
+                 0.045, 0, -0.015000000000000003`}, {0, 0, 
+                 0}, {-0.045, 0, -0.015000000000000003`}}], {0, 0, 0.35}], 
+              0, {0, 0, 1}], {}, {}}, {0, 0, 1/2}]}, Pi/2, {0, 1, 
+          0}]}, $CellContext`Crop[{{
+           Pattern[$CellContext`xmin, 
+            Blank[]], 
+           Pattern[$CellContext`xmax, 
+            Blank[]]}, {
+           Pattern[$CellContext`ymin, 
+            Blank[]], 
+           Pattern[$CellContext`ymax, 
+            Blank[]]}}] := {{0, 
+          1} + {-$CellContext`xmin, 
+            1 - $CellContext`xmax}/($CellContext`xmax - $CellContext`xmin), {
+          0, 1} + {-$CellContext`ymin, 
+            1 - $CellContext`ymax}/($CellContext`ymax - $CellContext`ymin)}, 
+       Attributes[$CellContext`MyManipulator] = {
+        HoldAll}, $CellContext`MyManipulator[
+         Pattern[$CellContext`var, 
+          Blank[]], 
+         Pattern[$CellContext`range, 
+          Blank[]], 
+         Pattern[$CellContext`func, 
+          Blank[]], Scale -> Pattern[$CellContext`scale, 
+           Blank[]]] := Row[{
+          Manipulator[
+           
+           Dynamic[$CellContext`var, $CellContext`func], $CellContext`range], \
+
+          $CellContext`PaddedInputField[
+           Dynamic[$CellContext`var], $CellContext`scale]}, 
+         Spacer[5]], $CellContext`MyManipulator[
+         Pattern[$CellContext`var, 
+          Blank[]], 
+         Pattern[$CellContext`range, 
+          Blank[]], 
+         Pattern[$CellContext`func, 
+          Blank[]]] := Row[{
+          Manipulator[
+           
+           Dynamic[$CellContext`var, $CellContext`func], $CellContext`range], \
+
+          $CellContext`PaddedInputField[
+           Dynamic[$CellContext`var]]}, 
+         Spacer[5]], $CellContext`PaddedInputField[
+         Pattern[$CellContext`x, 
+          Blank[]]] := InputField[
+         Dynamic[
+          DisplayForm[
+           StyleBox[
+            ToString[
+             $CellContext`MyNumberForm[$CellContext`x]]]], ($CellContext`x = \
+#)& ], FieldSize -> 5], $CellContext`PaddedInputField[
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`p, 
+          Blank[]]] := InputField[
+         Dynamic[
+          DisplayForm[
+           RowBox[{
+             ToString[
+              $CellContext`MyNumberForm[$CellContext`x/$CellContext`p]], 
+             TraditionalForm[$CellContext`p]}]], ($CellContext`x = #)& ], 
+         FieldSize -> 5], $CellContext`MyNumberForm[
+         Pattern[$CellContext`x, 
+          Blank[]]] := NumberForm[
+         N[$CellContext`x, 2], {2, 2}, NumberSigns -> {"-", "   "}, 
+         ExponentFunction -> (Null& )], $CellContext`AEToRP[
+         Pattern[$CellContext`st, 
+          
+          Blank[]]] := $CellContext`ReparameterizeField[$CellContext`st, \
+$CellContext`AngleEllipticity -> $CellContext`RatioPhase], \
+$CellContext`ReparameterizeField[{
+          Pattern[$CellContext`S1, 
+           Blank[]], 
+          Pattern[$CellContext`S2, 
+           Blank[]], 
+          Pattern[$CellContext`S3, 
+           Blank[]]}, $CellContext`Stokes -> $CellContext`RatioPhase] := {
+         ArcCos[Sqrt[1 + $CellContext`S1]/Sqrt[2]], 
+         If[$CellContext`S2 == $CellContext`S3 == 0., Pi/4, 
+          
+          ArcTan[$CellContext`S2, $CellContext`S3]]}, \
+$CellContext`ReparameterizeField[{
+          Pattern[$CellContext`\[Chi], 
+           Blank[]], 
+          Pattern[$CellContext`\[Phi], 
+           Blank[]]}, $CellContext`RatioPhase -> $CellContext`Stokes] := {
+         Cos[2 $CellContext`\[Chi]], Cos[$CellContext`\[Phi]] 
+         Sin[2 $CellContext`\[Chi]], Sin[$CellContext`\[Phi]] 
+         Sin[2 $CellContext`\[Chi]]}, $CellContext`ReparameterizeField[{
+          Pattern[$CellContext`\[Alpha], 
+           Blank[]], 
+          Pattern[$CellContext`\[Epsilon], 
+           
+           Blank[]]}, $CellContext`AngleEllipticity -> $CellContext`Stokes] := \
+{Cos[2 $CellContext`\[Alpha]] Cos[2 $CellContext`\[Epsilon]], 
+         Cos[2 $CellContext`\[Epsilon]] Sin[2 $CellContext`\[Alpha]], 
+         Sin[2 $CellContext`\[Epsilon]]}, $CellContext`ReparameterizeField[{
+          Pattern[$CellContext`S1, 
+           Blank[]], 
+          Pattern[$CellContext`S2, 
+           Blank[]], 
+          Pattern[$CellContext`S3, 
+           
+           Blank[]]}, $CellContext`Stokes -> $CellContext`AngleEllipticity] := \
+{
+         If[$CellContext`S1 == $CellContext`S2 == 0., 
+          0, (Sign[$CellContext`S2] + KroneckerDelta[$CellContext`S2]) 
+          ArcSin[
+            Sqrt[
+            1/2 - $CellContext`S1/(2 
+             Sqrt[$CellContext`S1^2 + $CellContext`S2^2])]]], (
+          Sign[$CellContext`S3] + KroneckerDelta[$CellContext`S3]) ArcCos[
+           Sqrt[
+           1/2 + (1/2) 
+             Sqrt[$CellContext`S1^2 + $CellContext`S2^2]]]}, \
+$CellContext`ReparameterizeField[{
+          Pattern[$CellContext`\[Chi], 
+           Blank[]], 
+          Pattern[$CellContext`\[Phi], 
+           
+           Blank[]]}, $CellContext`RatioPhase -> \
+$CellContext`AngleEllipticity] := $CellContext`ReparameterizeField[
+         $CellContext`ReparameterizeField[{$CellContext`\[Chi], $CellContext`\
+\[Phi]}, $CellContext`RatioPhase -> $CellContext`Stokes], $CellContext`Stokes -> \
+$CellContext`AngleEllipticity], $CellContext`ReparameterizeField[{
+          Pattern[$CellContext`\[Alpha], 
+           Blank[]], 
+          Pattern[$CellContext`\[Epsilon], 
+           
+           Blank[]]}, $CellContext`AngleEllipticity -> \
+$CellContext`RatioPhase] := $CellContext`ReparameterizeField[
+         $CellContext`ReparameterizeField[{$CellContext`\[Alpha], \
+$CellContext`\[Epsilon]}, $CellContext`AngleEllipticity -> \
+$CellContext`Stokes], $CellContext`Stokes -> $CellContext`RatioPhase], \
+$CellContext`AEToS[
+         Pattern[$CellContext`st, 
+          
+          Blank[]]] := $CellContext`ReparameterizeField[$CellContext`st, \
+$CellContext`AngleEllipticity -> $CellContext`Stokes], $CellContext`RPToAE[
+         Pattern[$CellContext`st, 
+          
+          Blank[]]] := $CellContext`ReparameterizeField[$CellContext`st, \
+$CellContext`RatioPhase -> $CellContext`AngleEllipticity], $CellContext`RPToS[
+        
+         Pattern[$CellContext`st, 
+          
+          Blank[]]] := $CellContext`ReparameterizeField[$CellContext`st, \
+$CellContext`RatioPhase -> $CellContext`Stokes], $CellContext`s2 = -1., \
+$CellContext`s3 = 
+       0., $CellContext`NS = $CellContext`NormalizeStokes, \
+$CellContext`NormalizeStokes[{
+          Pattern[$CellContext`s1, 
+           Blank[]], 
+          Pattern[$CellContext`s2, 
+           Blank[]], 
+          Pattern[$CellContext`s3, 
+           Blank[]]}] := Module[{$CellContext`a}, 
+         Which[
+          And[Abs[$CellContext`s2] < 0.01, Abs[$CellContext`s3] < 0.01], {
+          Sqrt[1 - $CellContext`s1^2]/Sqrt[2], Sqrt[1 - $CellContext`s1^2]/
+           Sqrt[2]}, Abs[$CellContext`s1] == 1., {0., 0.}, 
+          True, $CellContext`a = 
+           Sqrt[(1 - $CellContext`s1^2)/($CellContext`s2^2 + \
+$CellContext`s3^2)]; {$CellContext`s2 $CellContext`a, $CellContext`s3 \
+$CellContext`a}]], $CellContext`s1 = -1., $CellContext`SToAE[
+         Pattern[$CellContext`st, 
+          
+          Blank[]]] := $CellContext`ReparameterizeField[$CellContext`st, \
+$CellContext`Stokes -> $CellContext`AngleEllipticity], $CellContext`SToRP[
+         Pattern[$CellContext`st, 
+          
+          Blank[]]] := $CellContext`ReparameterizeField[$CellContext`st, \
+$CellContext`Stokes -> $CellContext`RatioPhase]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Input"]
+},
+WindowSize->{1016, 627},
+WindowMargins->{{-7, Automatic}, {Automatic, -3}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[568, 21, 49419, 1044, 690, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,81 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      2067,         72]
+NotebookOptionsPosition[      1818,         59]
+NotebookOutlinePosition[      2157,         74]
+CellTagsIndexPosition[      2114,         71]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ParametricPlot3D", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"u", " ", 
+        RowBox[{"Cos", "[", "u", "]"}], 
+        RowBox[{"(", 
+         RowBox[{"4", "+", 
+          RowBox[{"Cos", "[", 
+           RowBox[{"v", "+", "u"}], "]"}]}], ")"}]}], ",", 
+       RowBox[{"u", " ", 
+        RowBox[{"Sin", "[", "u", "]"}], 
+        RowBox[{"(", 
+         RowBox[{"4", "+", 
+          RowBox[{"Cos", "[", 
+           RowBox[{"v", "+", "u"}], "]"}]}], ")"}]}], ",", " ", 
+       RowBox[{"u", " ", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"u", "+", "v"}], "]"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"u", ",", "0", ",", "a"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"v", ",", "0", ",", 
+       RowBox[{"2", "Pi"}]}], "}"}], ",", 
+     RowBox[{"PlotPoints", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"60", ",", "10"}], "}"}]}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", " ", 
+       RowBox[{"200", ",", "200"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "0.1", ",", 
+     RowBox[{"4", " ", "Pi"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.420488393875*^9, 3.420488395359375*^9}}]
+},
+WindowSize->{613, 507},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[568, 21, 1246, 36, 92, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

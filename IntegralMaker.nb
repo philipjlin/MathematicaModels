@@ -1,0 +1,397 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     11931,        388]
+NotebookOptionsPosition[     11675,        375]
+NotebookOutlinePosition[     12017,        390]
+CellTagsIndexPosition[     11974,        387]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "f", ",", "x", ",", "n", ",", "k", ",", "c", ",", "cos", ",", "sin", ",", 
+    "ln", ",", "arctan", ",", "gun", ",", "fun", ",", "a", ",", "b", ",", 
+    "alist", ",", "blist"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"1", ",", "x_"}], "]"}], ":=", " ", 
+   RowBox[{"e", "^", 
+    RowBox[{"(", 
+     RowBox[{"k", " ", "x"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"2", ",", "x_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"cos", "[", "x", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"3", ",", "x_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"sin", "[", "x", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"4", ",", "x_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"x", "^", "n"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"7", ",", "x_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"ln", "[", "x", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"6", ",", "x_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"arctan", "[", "x", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fun", "[", "x_", "]"}], " ", "=", "  ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Random", "[", 
+      RowBox[{"Integer", ",", "9"}], "]"}], "*", 
+     RowBox[{"x", "^", "3"}]}], "-", 
+    RowBox[{
+     RowBox[{"Random", "[", 
+      RowBox[{"Integer", ",", "9"}], "]"}], "*", "x"}], "+", 
+    RowBox[{"Random", "[", 
+     RowBox[{"Integer", ",", "9"}], "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"5", ",", "x_"}], "]"}], " ", "=", "  ", 
+    RowBox[{"fun", "[", "x", "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"g", ",", "x", ",", "n", ",", "k", ",", "c"}], "]"}], ";"}], "\n", 
+
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", 
+    RowBox[{"1", ",", "x_"}], "]"}], ":=", " ", 
+   RowBox[{"e", "^", 
+    RowBox[{"(", 
+     RowBox[{"k", " ", "x"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", 
+    RowBox[{"2", ",", "x_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"sin", "[", "x", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", 
+    RowBox[{"3", ",", "x_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"cos", "[", "x", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", 
+    RowBox[{"4", ",", "x_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"x", "^", 
+    RowBox[{"(", 
+     RowBox[{"n", "-", "1"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", 
+    RowBox[{"7", ",", "x_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"1", "/", "x"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", 
+    RowBox[{"6", ",", "x_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      RowBox[{"x", "^", "2"}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"gun", "[", "x_", "]"}], " ", "=", " ", 
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{"fun", "[", "x", "]"}], ",", "x"}], "]"}]}], " ", ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "[", 
+     RowBox[{"5", ",", "x_"}], "]"}], " ", "=", " ", 
+    RowBox[{"gun", "[", "x", "]"}]}], " ", ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "k", ",", "n", ",", "c", ",", "Cee", ",", "r", ",", "i", ",", "choice", 
+    ",", "list", ",", "explist"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Permutations", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "2"}], ",", 
+        RowBox[{
+         RowBox[{"-", "1"}], "/", "2"}], ",", 
+        RowBox[{"1", "/", "2"}], ",", "3"}], "}"}], "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"Random", "[", 
+       RowBox[{"Integer", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", 
+          RowBox[{"5", "!"}]}], "}"}]}], "]"}], "]"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"k", "=", 
+   RowBox[{"Random", "[", 
+    RowBox[{"Integer", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "9"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"Random", "[", 
+    RowBox[{"Integer", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "9"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Cee", " ", "=", " ", 
+   RowBox[{"Random", "[", 
+    RowBox[{"Integer", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "9"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"choice", " ", "=", " ", 
+   RowBox[{"Random", "[", 
+    RowBox[{"Integer", ",", 
+     RowBox[{"7", "!"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"list", " ", "=", 
+    RowBox[{
+     RowBox[{"Permutations", "[", 
+      RowBox[{"{", 
+       RowBox[{
+       "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7"}], 
+       "}"}], "]"}], "[", 
+     RowBox[{"[", "choice", "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<1. \>\"", ",", 
+    "\"\<\!\(\*\nStyleBox[\\\"\[Integral]\\\",\\nFontSize->36]\)\!\(\*\n\
+StyleBox[\\\"(\\\",\\nFontSize->36]\) \>\"", ",", 
+    RowBox[{"g", "[", 
+     RowBox[{
+      RowBox[{"list", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], ",", "x"}], "]"}], ",", 
+    "\"\<\!\(\*\nStyleBox[\\\")\\\",\\nFontSize->36]\) dx\>\""}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<2. \>\"", ",", 
+    "\"\<\!\(\*\nStyleBox[\\\"\[Integral]\\\",\\nFontSize->36]\)\!\(\*\n\
+StyleBox[\\\"(\\\",\\nFontSize->36]\) \>\"", ",", 
+    RowBox[{"g", "[", 
+     RowBox[{
+      RowBox[{"list", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], ",", "x"}], "]"}], ",", 
+    "\"\<\!\(\*\nStyleBox[\\\")\\\",\\nFontSize->36]\) dx\>\""}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<3. \>\"", ",", 
+    "\"\<\!\(\*\nStyleBox[\\\"\[Integral]\\\",\\nFontSize->36]\)\!\(\*\n\
+StyleBox[\\\"(\\\",\\nFontSize->36]\) \>\"", ",", 
+    RowBox[{"Expand", "[", 
+     RowBox[{"Cee", "*", 
+      RowBox[{"g", "[", 
+       RowBox[{
+        RowBox[{"list", "[", 
+         RowBox[{"[", "3", "]"}], "]"}], ",", "x"}], "]"}]}], "]"}], ",", 
+    "\"\<\!\(\*\nStyleBox[\\\")\\\",\\nFontSize->36]\) dx\>\""}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<4. \>\"", ",", 
+     "\"\<\!\(\*\nStyleBox[\\\"\[Integral]\\\",\\nFontSize->36]\)\!\(\*\n\
+StyleBox[\\\"(\\\",\\nFontSize->36]\)\>\"", ",", 
+     RowBox[{
+      RowBox[{"g", "[", 
+       RowBox[{
+        RowBox[{"list", "[", 
+         RowBox[{"[", "4", "]"}], "]"}], ",", "x"}], "]"}], "+", 
+      RowBox[{"g", "[", 
+       RowBox[{
+        RowBox[{"list", "[", 
+         RowBox[{"[", "5", "]"}], "]"}], ",", "x"}], "]"}]}], ",", 
+     "\"\<\!\(\*\nStyleBox[\\\")\\\",\\nFontSize->36]\) dx\>\""}], "]"}], 
+   ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "k", ",", "n", ",", "c", ",", "Cee", ",", "r", ",", "i", ",", "choice", 
+    ",", "list"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"k", "=", 
+   RowBox[{"Random", "[", 
+    RowBox[{"Integer", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "9"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"Random", "[", 
+    RowBox[{"Integer", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "9"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"Random", "[", 
+    RowBox[{"Integer", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "9"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Cee", " ", "=", " ", 
+   RowBox[{"Random", "[", 
+    RowBox[{"Integer", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "5"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"choice", " ", "=", " ", 
+   RowBox[{"Random", "[", 
+    RowBox[{"Integer", ",", 
+     RowBox[{"7", "!"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"list", " ", "=", 
+    RowBox[{
+     RowBox[{"Permutations", "[", 
+      RowBox[{"{", 
+       RowBox[{
+       "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7"}], 
+       "}"}], "]"}], "[", 
+     RowBox[{"[", "choice", "]"}], "]"}]}], ";"}], "\n", "\t"}], "\n", 
+ RowBox[{"Do", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Clear", "[", 
+     RowBox[{"fun", ",", " ", "funder"}], "]"}], ";", "\n", 
+    RowBox[{"fun", " ", "=", " ", 
+     RowBox[{"g", "[", 
+      RowBox[{
+       RowBox[{"list", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{"f", "[", 
+        RowBox[{
+         RowBox[{"list", "[", 
+          RowBox[{"[", 
+           RowBox[{"i", "+", "3"}], "]"}], "]"}], ",", "x"}], "]"}]}], 
+      "]"}]}], ";", "\n", 
+    RowBox[{"funder", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"Random", "[", 
+       RowBox[{"Integer", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "9"}], "}"}]}], "]"}], "*", 
+      RowBox[{"g", "[", 
+       RowBox[{
+        RowBox[{"list", "[", 
+         RowBox[{"[", 
+          RowBox[{"i", "+", "3"}], "]"}], "]"}], ",", "x"}], "]"}]}]}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{
+      RowBox[{"i", "+", "4"}], ",", "\"\<. \>\"", ",", 
+      "\"\<\!\(\*\nStyleBox[\\\"\[Integral]\\\",\\nFontSize->36]\)\!\(\*\n\
+StyleBox[\\\"(\\\",\\nFontSize->36]\) \>\"", ",", 
+      RowBox[{"Simplify", "[", 
+       RowBox[{"fun", "*", "funder"}], "]"}], ",", 
+      "\"\<\!\(\*\nStyleBox[\\\")\\\",\\nFontSize->36]\) dx\>\""}], "]"}], 
+    ";", "\n", "\t", 
+    RowBox[{"Print", "[", "\"\< \>\"", "]"}], ";", "\n", "\t", 
+    RowBox[{"Print", "[", "\"\< \>\"", "]"}]}], "\n", ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "1", ",", "3"}], "}"}]}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"alist", " ", "=", " ", 
+   RowBox[{"{", "x", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"blist", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"sin", "[", 
+      RowBox[{"n", "*", "x"}], "]"}], ",", 
+     RowBox[{"cos", "[", 
+      RowBox[{"n", "*", "x"}], "]"}], ",", 
+     RowBox[{"e", "^", 
+      RowBox[{"(", 
+       RowBox[{"n", "*", "x"}], ")"}]}], ",", 
+     RowBox[{"ln", "[", "x", "]"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"a", "[", "x_", "]"}], "=", " ", 
+   RowBox[{"alist", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"b", "[", "x_", "]"}], "=", " ", 
+   RowBox[{"blist", "[", 
+    RowBox[{"[", 
+     RowBox[{"Random", "[", 
+      RowBox[{"Integer", ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "4"}], "}"}]}], "]"}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<8. \>\"", ",", 
+    "\"\<\!\(\*\nStyleBox[\\\"\[Integral]\\\",\\nFontSize->36]\)\!\(\*\n\
+StyleBox[\\\"(\\\",\\nFontSize->36]\)\>\"", ",", 
+    RowBox[{
+     RowBox[{"a", "[", "x", "]"}], "*", 
+     RowBox[{"b", "[", "x", "]"}]}], ",", 
+    "\"\<\!\(\*\nStyleBox[\\\")\\\",\\nFontSize->36]\) dx\>\""}], "]"}], 
+  ";"}]}], "Input",
+ PageWidth->PaperWidth,
+ CellChangeTimes->{{3.414799516140625*^9, 3.41479951678125*^9}, {
+  3.41479964225*^9, 3.414799643703125*^9}},
+ FontSize->12]
+},
+WindowSize->{613, 507},
+WindowMargins->{{Automatic, 132}, {52, Automatic}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[568, 21, 11103, 352, 1610, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

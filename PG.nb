@@ -1,0 +1,291 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     12460,        282]
+NotebookOptionsPosition[     12048,        263]
+NotebookOutlinePosition[     12431,        280]
+CellTagsIndexPosition[     12388,        277]
+WindowFrame->Normal
+ContainsDynamic->True *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"When", " ", "Will", " ", "The", " ", "World", " ", 
+     RowBox[{"End", "?", "A"}], " ", "Model", " ", "of", " ", "World", " ", 
+     "Population", " ", "Growth", " ", "as", " ", "Influenced", " ", "by", 
+     " ", "Natural", " ", "Capital", " ", "Use", " ", "Rates"}], ",", " ", 
+    RowBox[{
+    "including", " ", "a", " ", "guess", " ", "when", " ", "game", "\n", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Equations", ":", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "Logistic"}], " ", "for", " ", "growth", " ", "rate"}], 
+       "\n", " ", "-", 
+       RowBox[{
+       "Logistic", " ", "for", " ", "population", " ", "number", "\n", 
+        "\[IndentingNewLine]", "Change", " ", "then", " ", "Fixed", " ", 
+        RowBox[{"Variables", ":", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "Growth"}], " ", "rate"}], "\n", "\t", "-", 
+          RowBox[{
+          "Carrying", " ", "capacity", "\n", "\[IndentingNewLine]", "Dynamic",
+            " ", 
+           RowBox[{"Variables", ":", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "Population"}], " ", "number"}], "\n", "\t   ", 
+              "-", "Time", "\n", "\t   ", "-", 
+              RowBox[{
+              "Fuel", " ", "number", "\n", "\[IndentingNewLine]", 
+               "Manipulative", " ", "Variables", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{
+                 "manipulate", " ", "growth", " ", "rate", " ", "or", " ", 
+                  "carrying", " ", "capacity"}], "+", 
+                 RowBox[{"/", 
+                  RowBox[{"-", "ly"}]}]}], ")"}]}]}], ":", "  ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "Fuel"}], " ", "use", " ", "rate", " ", 
+               RowBox[{"(", 
+                RowBox[{"impacts", " ", "growth", " ", "rate"}], ")"}]}], 
+              "\n", "\t     ", "-", 
+              RowBox[{"Impact", " ", "of", " ", "technology", " ", 
+               RowBox[{"(", 
+                RowBox[{"impacts", " ", "carrying", " ", "capacity"}], 
+                ")"}]}]}]}]}]}]}]}]}]}]}]}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "*)"}], "\n", "\[IndentingNewLine]", 
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{"r", "=", 
+    RowBox[{
+     RowBox[{
+     "1.1", " ", "population", " ", "growth", " ", "rate", "\n", "c"}], "=", 
+     RowBox[{
+      RowBox[{"20", " ", "carrying", " ", "capacity", "\n", "n"}], "=", 
+      RowBox[{
+       RowBox[{"1", " ", "population", " ", "number", "\n", "t"}], "=", 
+       RowBox[{
+        RowBox[{"0", " ", "time", " ", "elapsed", "\n", "f"}], "=", 
+        RowBox[{
+         RowBox[{"20", " ", "fuel", " ", "amount", "\n", "u"}], "=", 
+         RowBox[{"1.1", " ", "fuel", " ", "use", " ", "rate"}]}]}]}]}]}]}], 
+   "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", "\n", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"denominator", " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", "c", ")"}], 
+         RowBox[{"(", "n", ")"}], "*", 
+         RowBox[{"(", 
+          RowBox[{"\[ExponentialE]", "^", 
+           RowBox[{"(", 
+            RowBox[{"r", "*", "t"}], ")"}]}], ")"}]}], ")"}], 
+       "\[IndentingNewLine]", "numerator"}], " ", "=", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"c", "+", 
+         RowBox[{
+          RowBox[{"(", "n", ")"}], 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"\[ExponentialE]", "^", 
+             RowBox[{"(", 
+              RowBox[{"r", "*", "t"}], ")"}]}], "-", "1"}], ")"}]}]}], ")"}], 
+       "\[IndentingNewLine]", "if", " ", 
+       RowBox[{"numerator", "/", "denominator"}], " ", "gets", " ", "to", " ",
+        "the", " ", "carrying", " ", "capcity"}]}]}], ",", "    ", 
+    RowBox[{
+    "add", " ", "one", " ", "to", " ", "numerator", " ", "in", " ", "order", 
+     " ", "to", " ", "get", " ", "over"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.4011981202056*^9, 3.4011981362424*^9}, {
+   3.4012022670264*^9, 3.4012022675724*^9}, {3.4012023057455997`*^9, 
+   3.401202305808*^9}, {3.4012023572412*^9, 3.4012023576156*^9}, {
+   3.4012027473302*^9, 3.4012027692581997`*^9}, 3.401549948586*^9, {
+   3.4015502378592*^9, 3.4015502463402*^9}, {3.4015502788241997`*^9, 
+   3.4015503121932*^9}, 3.4015503434292*^9, 3.4015505952722*^9, 
+   3.4015507776202*^9, {3.4015508331092*^9, 3.4015508358412*^9}, {
+   3.4015509417002*^9, 3.4015509776851997`*^9}, 3.4015510419962*^9, {
+   3.4015510882111998`*^9, 3.4015510939462*^9}, {3.4015512367482*^9, 
+   3.4015513198202*^9}, {3.4017209706488824`*^9, 3.4017209724428825`*^9}, {
+   3.4036226013218837`*^9, 3.403622645865884*^9}, {3.4036226844778833`*^9, 
+   3.4036227530668836`*^9}, {3.403622930332884*^9, 3.4036229910988836`*^9}, {
+   3.4036230764968834`*^9, 3.4036230934028835`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+   "DynamicModule", "[", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"t", ",", "r", ",", 
+       RowBox[{"f", "=", "20"}], ",", 
+       RowBox[{"c", "=", " ", "20"}], ",", 
+       RowBox[{"n", "=", "1"}], ",", 
+       RowBox[{"u", "=", "1.1"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"VerticalSlider", "[", 
+        RowBox[{"Dynamic", "[", "r", "]"}], "]"}], ",", "\[IndentingNewLine]",
+        
+       RowBox[{"VerticalSlider", "[", 
+        RowBox[{"Dynamic", "[", "n", "]"}], "]"}], ",", "\[IndentingNewLine]",
+        "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "[", 
+        RowBox[{"Plot", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", "c", ")"}], 
+             RowBox[{"(", "n", ")"}], "*", 
+             RowBox[{"(", 
+              RowBox[{"\[ExponentialE]", "^", 
+               RowBox[{"(", 
+                RowBox[{"r", "*", "t"}], ")"}]}], ")"}]}], ")"}], "/", 
+           RowBox[{"(", 
+            RowBox[{"c", "+", 
+             RowBox[{
+              RowBox[{"(", "n", ")"}], 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"\[ExponentialE]", "^", 
+                 RowBox[{"(", 
+                  RowBox[{"r", "*", "t"}], ")"}]}], "-", "1"}], ")"}]}]}], 
+            ")"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", "100"}], "}"}], ",", 
+          RowBox[{"PlotRange", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "100"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", 
+               RowBox[{"c", "+", "1"}]}], "}"}]}], "}"}]}]}], "]"}], "]"}]}], 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", "}"}]}], "]"}], 
+   "\[IndentingNewLine]", " ", "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.4011982417868*^9, 3.4011982426916*^9}, {
+   3.4011990666158*^9, 3.4011990748838*^9}, {3.4011991446626*^9, 
+   3.4011992798366003`*^9}, {3.4012022734848003`*^9, 3.4012023005196*^9}, {
+   3.4012023632784*^9, 3.4012024188924*^9}, {3.4012025347692003`*^9, 
+   3.4012025377799997`*^9}, {3.4012025738784*^9, 3.4012026303036003`*^9}, {
+   3.4012028454992*^9, 3.4012028482792*^9}, {3.4012034776280003`*^9, 
+   3.4012034947209997`*^9}, {3.4012037183914003`*^9, 3.4012037628358*^9}, {
+   3.4012038481834*^9, 3.4012038634402*^9}, {3.4012039194754*^9, 
+   3.4012039253098*^9}, {3.4015470378268714`*^9, 3.4015470388876715`*^9}, {
+   3.4015481495282*^9, 3.4015482311942*^9}, {3.4015483080866003`*^9, 
+   3.4015483587398*^9}, {3.4015485143796*^9, 3.4015485148632*^9}, {
+   3.4015485863268003`*^9, 3.4015486387427998`*^9}, {3.4015505805832*^9, 
+   3.4015505879762*^9}, {3.4015506295861998`*^9, 3.4015506675741997`*^9}, {
+   3.4015507099812*^9, 3.4015507238812*^9}, {3.4015508619611998`*^9, 
+   3.4015508650092*^9}, {3.4015510568712*^9, 3.4015510820732*^9}, {
+   3.4017186101218824`*^9, 3.4017186839722824`*^9}, {3.4017187528462825`*^9, 
+   3.4017188611102824`*^9}, {3.4017189025750823`*^9, 
+   3.4017189717298822`*^9}, {3.4017190130698824`*^9, 
+   3.4017190178122826`*^9}, {3.401719075984682*^9, 3.4017191078242826`*^9}, {
+   3.401719141551482*^9, 3.401719149476282*^9}, {3.4017191872906823`*^9, 
+   3.4017192464926825`*^9}, {3.4017192928714824`*^9, 
+   3.4017193009366827`*^9}, {3.401719400074682*^9, 3.4017195023326826`*^9}, {
+   3.4017195469330826`*^9, 3.4017196495030823`*^9}, {3.4017196980814824`*^9, 
+   3.4017197155066824`*^9}, {3.4017197721502824`*^9, 
+   3.4017198261262827`*^9}, {3.4017199183066826`*^9, 3.4017200365702825`*^9}, 
+   3.4017200674894824`*^9, {3.4017200981590824`*^9, 3.401720125646282*^9}, {
+   3.401720182024682*^9, 3.4017201822274823`*^9}, {3.4017202503370824`*^9, 
+   3.4017202642366824`*^9}, {3.4017207936512823`*^9, 
+   3.4017210908936825`*^9}, {3.4017211845248823`*^9, 
+   3.4017211906400824`*^9}, {3.401721264911682*^9, 3.4017212979212823`*^9}, {
+   3.4017213284816823`*^9, 3.4017213431612825`*^9}, {3.4017216980300827`*^9, 
+   3.4017218849960823`*^9}, {3.4017219202208824`*^9, 3.401722025848482*^9}, {
+   3.4017223715480824`*^9, 3.401722407396882*^9}, {3.4036224336908836`*^9, 
+   3.403622436280884*^9}, {3.4036225217818837`*^9, 3.4036225853278837`*^9}, {
+   3.4036227634188833`*^9, 3.4036228065418835`*^9}, {3.4036229134938836`*^9, 
+   3.4036229148698835`*^9}, {3.4036231058948836`*^9, 
+   3.4036231682908835`*^9}, {3.4036232168878837`*^9, 
+   3.4036232898308835`*^9}, {3.4036233514398837`*^9, 
+   3.4036233883058834`*^9}, {3.4036234207918835`*^9, 
+   3.4036235158488836`*^9}, {3.4036235790508833`*^9, 3.4036235832978835`*^9}, 
+   3.403623636620884*^9, {3.4036237731578836`*^9, 3.4036237831368837`*^9}, 
+   3.4036238275668836`*^9, {3.403625147910884*^9, 3.4036251493648834`*^9}, {
+   3.403625221653884*^9, 3.4036252294898834`*^9}, {3.4036253103228836`*^9, 
+   3.403625378752884*^9}, 3.4036254558208838`*^9, {3.40651426746875*^9, 
+   3.406514278*^9}, {3.406518521203125*^9, 3.40651852175*^9}}],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`t$$, $CellContext`r$$ = 
+  0.606, $CellContext`f$$ = 20, $CellContext`c$$ = 20, $CellContext`n$$ = 
+  0.37, $CellContext`u$$ = 1.1}, 
+  RowBox[{"{", 
+   RowBox[{
+    SliderBox[Dynamic[$CellContext`r$$],
+     Appearance->"Vertical"], ",", 
+    SliderBox[Dynamic[$CellContext`n$$],
+     Appearance->"Vertical"], ",", 
+    DynamicBox[ToBoxes[
+      Plot[(($CellContext`c$$ $CellContext`n$$) 
+        E^($CellContext`r$$ $CellContext`t$$))/($CellContext`c$$ + \
+$CellContext`n$$ (E^($CellContext`r$$ $CellContext`t$$) - 
+         1)), {$CellContext`t$$, 0, 100}, 
+       PlotRange -> {{0, 100}, {0, $CellContext`c$$ + 1}}], StandardForm],
+     ImageSizeCache->{225., {69., 76.}}]}], "}"}],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{{3.4036234893148837`*^9, 3.4036235168718834`*^9}, 
+   3.4036236038828835`*^9, 3.4036236370848837`*^9, {3.4036237761398835`*^9, 
+   3.4036237942498837`*^9}, 3.403623828436884*^9, 3.4036251501928835`*^9, 
+   3.4036252301198835`*^9, {3.403625315971884*^9, 3.4036253795578833`*^9}, 
+   3.4036254562208834`*^9, 3.4065142700625*^9, 3.40651948825*^9}]
+}, Open  ]]
+},
+WindowSize->{752, 523},
+WindowMargins->{{-2, Automatic}, {Automatic, 44}},
+ShowSelection->True,
+Magnification->1.25,
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[568, 21, 5095, 112, 916, "Input"],
+Cell[CellGroupData[{
+Cell[5688, 137, 5207, 99, 366, "Input"],
+Cell[10898, 238, 1134, 22, 271, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

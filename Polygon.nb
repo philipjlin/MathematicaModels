@@ -1,0 +1,308 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     12884,        299]
+NotebookOptionsPosition[     12538,        282]
+NotebookOutlinePosition[     12897,        298]
+CellTagsIndexPosition[     12854,        295]
+WindowFrame->Normal
+ContainsDynamic->True *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ngon", "[", 
+    RowBox[{"p_", ",", "q_"}], "]"}], ":=", 
+   RowBox[{"Polygon", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", " ", "Pi", " ", "k", " ", 
+          RowBox[{"q", "/", "p"}]}], "]"}], ",", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", " ", "Pi", " ", "k", " ", 
+          RowBox[{"q", "/", "p"}]}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "p"}], "}"}]}], "]"}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"area", "[", "n_", "]"}], ":=", 
+   FractionBox[
+    RowBox[{"n", "*", 
+     RowBox[{"Sin", "[", 
+      FractionBox[
+       RowBox[{"2.", "\[Pi]"}], "n"], "]"}]}], "2"]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"perimeter", "[", "n_", "]"}], ":=", 
+  RowBox[{"n", "*", 
+   SqrtBox[
+    RowBox[{"2", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       RowBox[{"Cos", "[", 
+        FractionBox[
+         RowBox[{"2.", "\[Pi]"}], "n"], "]"}]}], 
+      ")"}]}]]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"EdgeForm", "[", 
+        RowBox[{"Hue", "[", 
+         RowBox[{"n", "/", "30"}], "]"}], "]"}], ",", "White", ",", 
+       RowBox[{"ngon", "[", 
+        RowBox[{"n", ",", "1"}], "]"}]}], "}"}], ",", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"StringForm", "[", 
+       RowBox[{"\"\<\\nPi: ``\\n Area: ``\\n  Perimeter: ``\>\"", ",", 
+        RowBox[{"N", "[", 
+         RowBox[{"Pi", ",", "8"}], "]"}], ",", 
+        RowBox[{"NumberForm", "[", 
+         RowBox[{
+          RowBox[{"area", "[", "n", "]"}], ",", "8"}], "]"}], ",", 
+        RowBox[{"NumberForm", "[", 
+         RowBox[{
+          RowBox[{"perimeter", "[", "n", "]"}], ",", "8"}], "]"}]}], "]"}]}], 
+     ",", 
+     RowBox[{"ImageSize", " ", "->", "70"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "3", ",", "50", ",", "1"}], "}"}], ",", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}], "\n"}], "Input",
+ CellChangeTimes->{{3.4018167539681826`*^9, 3.401816777437834*^9}, {
+   3.4018168208926277`*^9, 3.4018168945673313`*^9}, {3.4018169402717404`*^9, 
+   3.4018169460062623`*^9}, {3.401817151714653*^9, 3.4018171666525354`*^9}, 
+   3.4018172012784224`*^9, {3.4018180294714985`*^9, 3.4018182729777317`*^9}, {
+   3.4018183960121317`*^9, 3.4018184188095903`*^9}, {3.4018185280155106`*^9, 
+   3.4018185593131866`*^9}, {3.4018185986579437`*^9, 3.401818766115356*^9}, {
+   3.401818805178856*^9, 3.4018188635553503`*^9}, {3.4018189766676207`*^9, 
+   3.4018189961368694`*^9}, {3.401819141343712*^9, 3.4018191478595033`*^9}, {
+   3.401819271055905*^9, 3.401819302945593*^9}, {3.4018194031792593`*^9, 
+   3.401819406915355*^9}, 3.4018194477466617`*^9, {3.4018194877177925`*^9, 
+   3.4018195277728696`*^9}, {3.401819656049135*^9, 3.401819744051529*^9}, {
+   3.401819826892972*^9, 3.401819872257572*^9}, {3.401819922060184*^9, 
+   3.401819944547149*^9}, {3.4018200575132866`*^9, 3.401820073812039*^9}, {
+   3.4018201247698*^9, 3.4018201791336985`*^9}, {3.4018203844945326`*^9, 
+   3.401820385088332*^9}, {3.401820471438176*^9, 3.4018204717194457`*^9}, {
+   3.401820718924139*^9, 3.401820740691157*^9}, {3.401821082431777*^9, 
+   3.401821142294983*^9}, {3.40231011490625*^9, 3.4023101166875*^9}, {
+   3.40231034825*^9, 3.4023103559375*^9}, {3.418510697328125*^9, 
+   3.4185107084375*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 3, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 3, 50, 1}}, Typeset`size$$ = {70., {76., 81.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`n$30498$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 3}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$30498$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics[{
+         EdgeForm[
+          Hue[$CellContext`n$$/30]], White, 
+         $CellContext`ngon[$CellContext`n$$, 1]}, PlotLabel -> 
+        StringForm["\nPi: ``\n Area: ``\n  Perimeter: ``", 
+          N[Pi, 8], 
+          NumberForm[
+           $CellContext`area[$CellContext`n$$], 8], 
+          NumberForm[
+           $CellContext`perimeter[$CellContext`n$$], 8]], ImageSize -> 70], 
+      "Specifications" :> {{$CellContext`n$$, 3, 50, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{253., {121., 126.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`ngon[
+         Pattern[$CellContext`p, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := Polygon[
+         Table[{
+           Cos[((2 Pi) $CellContext`k) ($CellContext`q/$CellContext`p)], 
+           
+           Sin[((2 Pi) $CellContext`k) ($CellContext`q/$CellContext`p)]}, \
+{$CellContext`k, $CellContext`p}]], $CellContext`p = Graphics[{{
+           GrayLevel[0], 
+           Opacity[1], 
+           EdgeForm[None], 
+           
+           Polygon[{{0.48888888888888893`, 0.5388888888888888}, {
+            0.45833333333333337`, 0.5388888888888888}, {0.4388888888888889, 
+            0.5249999999999999}, {0.4361111111111111, 0.5027777777777777}, {
+            0.41666666666666663`, 0.4083333333333332}, {0.4222222222222223, 
+            0.3805555555555554}, {0.4361111111111111, 0.3805555555555554}, {
+            0.4638888888888889, 0.49444444444444435`}, {0.47777777777777775`, 
+            0.4083333333333332}, {0.4472222222222222, 0.22499999999999987`}, {
+            0.40555555555555556`, 0.20555555555555538`}, {0.4027777777777778, 
+            0.1944444444444443}, {0.46944444444444444`, 
+            0.19166666666666654`}, {0.475, 0.21666666666666656`}, {
+            0.5194444444444445, 0.38611111111111096`}}]}, {
+           GrayLevel[0], 
+           Opacity[1], 
+           EdgeForm[None], 
+           
+           Polygon[{{0.5402116402116403, 0.5416666666666652}, {
+            0.5693121693121693, 0.5416666666666652}, {0.5878306878306879, 
+            0.5277777777777763}, {0.5904761904761905, 0.5055555555555541}, {
+            0.6089947089947091, 0.41111111111110965`}, {0.6037037037037037, 
+            0.38333333333333186`}, {0.5904761904761905, 
+            0.38333333333333186`}, {0.5640211640211641, 0.4972222222222208}, {
+            0.5507936507936508, 0.41111111111110965`}, {0.57989417989418, 
+            0.2277777777777763}, {0.6195767195767196, 0.20833333333333182`}, {
+            0.6222222222222222, 0.19722222222222074`}, {0.5587301587301587, 
+            0.19444444444444298`}, {0.5534391534391535, 0.219444444444443}, {
+            0.5111111111111111, 0.3888888888888874}}]}, {
+           RGBColor[1., 0.8666666666666667, 0.8760814831769284], 
+           EdgeForm[
+            AbsoluteDashing[0.5]], 
+           
+           Disk[{0.513888888888889, 0.6027777777777772}, {0.03888888888888897,
+             0.038888888888889195`}]}, {
+           RGBColor[1., 0.8666666666666667, 0.8666666666666667], 
+           
+           Rectangle[{0.49722222222222223`, 0.5694444444444443}, {
+            0.5361111111111112, 0.5361111111111109}]}, {
+           RGBColor[1., 1., 1.], 
+           EdgeForm[
+            AbsoluteDashing[0.5]], 
+           
+           Polygon[{{0.5, 0.5499999999999994}, {0.46944444444444444`, 
+            0.5416666666666661}, {0.49722222222222223`, 0.5222222222222217}, {
+            0.4833333333333334, 0.505555555555555}, {0.5166666666666667, 
+            0.4138888888888883}}]}, {
+           RGBColor[1., 1., 1.], 
+           EdgeForm[
+            AbsoluteDashing[0.5]], 
+           
+           Polygon[{{0.531372549019608, 0.5499999999999983}, {
+            0.5583333333333333, 0.541666666666665}, {0.5338235294117648, 
+            0.5222222222222206}, {0.5460784313725491, 0.5055555555555539}, {
+            0.5166666666666666, 0.4138888888888872}}]}, {
+           RGBColor[1., 0.2, 0.23764400701915006`], 
+           EdgeForm[
+            AbsoluteDashing[0.5]], 
+           
+           Polygon[{{0.5027777777777778, 0.536111111111111}, {
+            0.5277777777777778, 0.536111111111111}, {0.5166666666666667, 
+            0.5194444444444444}}]}, {
+           RGBColor[1., 0.2, 0.23764400701915006`], 
+           Opacity[1], 
+           EdgeForm[{
+             GrayLevel[0], 
+             Opacity[1], 
+             AbsoluteThickness[0.5], 
+             AbsoluteDashing[0.5]}], 
+           
+           Polygon[{{0.513888888888889, 0.5305555555555552}, {
+            0.5055555555555555, 0.5138888888888885}, {0.513888888888889, 
+            0.4722222222222219}, {0.5222222222222223, 
+            0.5222222222222218}}]}, {
+           RGBColor[1., 0.9450980392156862, 0.06666666666666667], 
+           EdgeForm[
+            AbsoluteDashing[0.5]], 
+           
+           Polygon[{{0.48611111111111105`, 0.6222222222222218}, {
+            0.5111111111111111, 0.6222222222222221}, {0.5388888888888889, 
+            0.6222222222222221}, {0.5583333333333333, 0.6222222222222221}, {
+            0.5722222222222222, 0.6305555555555554}, {0.5750000000000001, 
+            0.6472222222222221}, {0.5722222222222222, 0.6583333333333332}, {
+            0.5583333333333333, 0.6444444444444444}, {0.5416666666666666, 
+            0.6444444444444444}, {0.5305555555555556, 0.6583333333333332}, {
+            0.513888888888889, 0.661111111111111}, {0.48888888888888893`, 
+            0.661111111111111}, {0.47777777777777775`, 0.6416666666666666}, {
+            0.46111111111111114`, 0.6416666666666666}, {0.45277777777777783`, 
+            0.6277777777777777}, {0.4555555555555556, 0.6138888888888887}, {
+            0.4750000000000001, 0.580555555555555}}]}, {
+           RGBColor[1., 0.8666666666666667, 0.8666666666666667], 
+           AbsoluteDashing[0.5], 
+           EdgeForm[
+            AbsoluteDashing[0.5]], 
+           
+           Polygon[{{0.41666666666666663`, 0.40277777777777724`}, {
+            0.4388888888888889, 0.39999999999999947`}, {0.43333333333333335`, 
+            0.36666666666666614`}, {0.4222222222222223, 0.3638888888888884}, {
+            0.41666666666666663`, 0.3861111111111105}}]}, {
+           RGBColor[1., 0.8666666666666667, 0.8666666666666667], 
+           AbsoluteDashing[0.5], 
+           EdgeForm[
+            AbsoluteDashing[0.5]], 
+           
+           Polygon[{{0.5861111111111111, 0.4083333333333323}, {
+            0.6083333333333334, 0.40555555555555456`}, {0.6027777777777779, 
+            0.37222222222222123`}, {0.5916666666666668, 
+            0.36944444444444346`}, {0.5861111111111111, 
+            0.3916666666666656}}]}}, 
+         PlotRange -> {{0, 1}, {0, 1}}], $CellContext`area[
+         Pattern[$CellContext`n, 
+          Blank[]]] := ($CellContext`n Sin[(2. Pi)/$CellContext`n])/
+        2, $CellContext`perimeter[
+         Pattern[$CellContext`n, 
+          Blank[]]] := $CellContext`n 
+        Sqrt[2 (1 - Cos[(2. Pi)/$CellContext`n])]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.402310054375*^9, 3.40231011825*^9, 3.402310356921875*^9, {
+   3.41851069853125*^9, 3.418510708828125*^9}}]
+}, Open  ]]
+},
+WindowSize->{1016, 627},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification->1.,
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 3543, 84, 242, "Input"],
+Cell[4136, 109, 8386, 170, 264, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
